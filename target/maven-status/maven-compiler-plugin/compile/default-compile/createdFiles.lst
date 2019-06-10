@@ -1,0 +1,5 @@
+ru/fratask/mc/plugin/tp/executors/TeleportToPlayerCommandExecutor.class
+ru/fratask/mc/plugin/tp/executors/TeleportToPointCommandExecutor.class
+ru/fratask/mc/plugin/tp/executors/TeleportFromPlayerToPlayerCommandExecutor.class
+mcmod.info
+ru/fratask/mc/plugin/tp/EasyTeleportPlugin.class

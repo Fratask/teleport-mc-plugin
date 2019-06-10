@@ -18,11 +18,17 @@ public class TeleportFromPlayerToPlayerCommandExecutor implements CommandExecuto
     public CommandResult execute(CommandSource src, CommandContext args) {
         Player player1 = (Player) args.getOne("player1").get();
         Player player2 = (Player) args.getOne("player2").get();
-        player1.setLocation(player2.getLocation());
+        if (player1.getName().equals(player2.getName())){
+            player1.sendMessage(Text.of(TextColors.RED, "You must choose another player!"));
+        } else if (!player2.isOnline()){
+            player1.sendMessage(Text.of(TextColors.RED, "You must choose online player!"));
+        } else {
+            player1.setLocation(player2.getLocation());
 
-        player1.sendMessage(Text.of(TextColors.YELLOW, "You teleported to " + player2.getName() + " by " + src.getName()));
-        player2.sendMessage(Text.of(TextColors.YELLOW, "Player " + player1.getName() + " teleported to you by " + src.getName()));
-        logger.info("Player " + player1.getName() + " teleported to player " + player2 + " by " + src.getName());
+            player1.sendMessage(Text.of(TextColors.YELLOW, "You teleported to " + player2.getName() + " by " + src.getName()));
+            player2.sendMessage(Text.of(TextColors.YELLOW, "Player " + player1.getName() + " teleported to you by " + src.getName()));
+            logger.info("Player " + player1.getName() + " teleported to player " + player2 + " by " + src.getName());
+        }
         return CommandResult.success();
     }
 }
