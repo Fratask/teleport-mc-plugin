@@ -12,7 +12,7 @@ import ru.fratask.mc.plugin.tp.EasyTeleportPlugin;
 
 public class TeleportFromPlayerToPlayerCommandExecutor implements CommandExecutor {
 
-    Logger logger = EasyTeleportPlugin.getLogger();
+    Logger logger = EasyTeleportPlugin.getInstance().getLogger();
 
     @Override
     public CommandResult execute(CommandSource src, CommandContext args) {
