@@ -19,7 +19,7 @@ public class EasyTeleportPlugin {
     private static EasyTeleportPlugin instance;
 
     @Inject
-    static Logger logger;
+    private static Logger logger;
 
     @Listener
     public void onServerStart(GameInitializationEvent event){
